@@ -1,0 +1,88 @@
+<header id="header" class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary container d-flex align-items-center justify-content-lg-between">
+    <div class="container-fluid justify-content-end ">
+      <h1 class="logo me-auto me-lg-0 navbar-brand"><a href="index.html">ECO<span><fa-icon
+              [icon]="faSeedling"></fa-icon>.</span></a></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll" id="navbarNavAltMarkup">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/home" RouterLinkActive
+              [class.active]="nav.home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" RouterLinkActive [class.active]="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shop" RouterLinkActive [class.active]="nav.shop">Shop</a>
+          </li>
+        </ul>
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+              [(ngModel)]="nav.search" (input)="send($event)" [ngModelOptions]="{standalone: true}">
+            <button class="btn submit btn-outline-success" type="submit" routerLink="/shop"><fa-icon
+                [icon]="faSearch"></fa-icon></button>
+          </form>
+        </div>
+      </div>
+      <ng-template [ngIf]="!auth.isLoggedIn()" [ngIfElse]="loggedIn">
+        <button class="btn btn-outline-success get-started-btn" type="submit" (click)="Login()">Login <fa-icon
+            [icon]="faUser"></fa-icon></button>
+      </ng-template>
+      <ng-template #loggedIn>
+        <!-- <div class="collapse me-1 navbar-collapse" id="navbarScroll" id="navbarNavAltMarkup" style="max-width: 10%;"> -->
+        <div class="nav-item" style="margin-bottom: -7px;" *ngIf="!mobile">
+          <a class="nav-link" routerLink="/wishlist" RouterLinkActive [class.active]="colorCart" (click)="Cart()">
+            <div class="numberOfitems">
+              <span class="numInCart col" *ngIf="nav.wishlist!=0">{{nav.wishlist}}</span>
+              <fa-icon class="cart-icon" [icon]="faHeart"></fa-icon>
+            </div>
+          </a>
+        </div>
+        <div class="nav-item" style="margin-bottom: -12px;" *ngIf="!mobile">
+          <a class="nav-link" routerLink="/cart" RouterLinkActive [class.active]="colorCart" (click)="Cart()">
+            <div class="numberOfitems ">
+              <span class="numInCart col" *ngIf="nav.cart!=0">{{nav.cart}}</span>
+              <fa-icon class="cart-icon" [icon]="faCartShopping"></fa-icon>
+            </div>
+          </a>
+        </div>
+        <!-- </div> -->
+        <div class="dropdown">
+          <button class="btn btn-outline-success  dropdown-toggle get-started-btn profile" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><fa-icon
+              [icon]="faUser"></fa-icon></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [class.mobile]="mobile">
+            <a class="dropdown-item" routerLink="/profile" routerLinkActive>Profile</a>
+            <a class="dropdown-item" routerLink="/wishlist" routerLinkActive *ngIf="mobile">Wishlist</a>
+            <a class="dropdown-item" routerLink="/cart" routerLinkActive *ngIf="mobile">Cart</a>
+            <a class="dropdown-item" routerLink="/orders" routerLinkActive>Orders</a>
+            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+          </div>
+        </div>
+
+      </ng-template>
+    </div>
+  </nav>
+</header>
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="logoutModalLabel">Logout</h1>
+        <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="Logout()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

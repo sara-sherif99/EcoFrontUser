@@ -1,0 +1,116 @@
+<nav mat-tab-nav-bar class="navbar">
+    <button (click)="activeLog()" [class.active]="log">
+        Login
+    </button>
+    <button (click)="activeSign()" [class.active]="sign">
+        Signup
+    </button>
+</nav>
+<ng-template [ngIf]="log" [ngIfElse]="signup">
+    <div class="login">
+        <div class="form-block">
+            <div class="grid align__item">
+                <div class="register">
+                    <h1 class="logo me-auto me-lg-0 navbar-brand">ECO<span><fa-icon
+                                [icon]="faSeedling"></fa-icon>.</span>
+                    </h1>
+                    <h2 mat-dialog-title>Login to ECO</h2>
+                    <form action="" method="post" class="form" [formGroup]="logForm">
+                        <div class="form__field">
+                            <input type="email" placeholder="email" formControlName="email"
+                                [class.error]="logForm.get('email')?.invalid && logForm.get('email')?.touched && submitted">
+                            <p
+                                [class.error]="logForm.get('email')?.invalid && logForm.get('email')?.touched && submitted">
+                                Enter valid Email</p>
+                        </div>
+                        <div class="form__field">
+                            <input [type]="showLog? 'text' : 'password'" placeholder="password"
+                                formControlName="password"
+                                [class.error]="logForm.get('password')?.invalid && logForm.get('password')?.touched && submitted">
+                            <p
+                                [class.error]="logForm.get('password')?.invalid && logForm.get('password')?.touched && submitted">
+                                Enter password</p>
+                            <button class="showPass" ngClass="{'hide': {{!showLog}}, 'show': {{showLog}}}"
+                                (click)="passwordLog()">
+                                <fa-icon [icon]="showLog? faEyeSlash:faEye"></fa-icon>
+                            </button>
+                        </div>
+                        <div class="form__field">
+                            <input type="submit" value="Login" (click)="Login()"
+                                [disabled]="!logForm.get('password')?.touched && !logForm.get('email')?.touched"
+                                [class.disabled]="!logForm.get('password')?.touched && !logForm.get('email')?.touched">
+                        </div>
+                        <div class="errorHandle">
+                            <p [class.error]="errorHandleLog">{{msg}}</p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #signup>
+    <div class="form-block">
+        <div class="grid align__item">
+            <div class="register">
+                <h2 mat-dialog-title>Sign Up</h2>
+                <form action="" method="post" class="form" [formGroup]="form">
+                    <div class="form__field">
+                        <input type="text" placeholder="username" formControlName="username"
+                            [class.error]="form.get('username')?.invalid && form.get('username')?.touched">
+                        <p [class.error]="form.get('username')?.invalid && form.get('username')?.touched">This field is
+                            required</p>
+                    </div>
+                    <div class="form__field">
+                        <input type="email" placeholder="email" formControlName="email"
+                            [class.error]="form.get('email')?.invalid && form.get('email')?.touched">
+                        <p [class.error]="form.get('email')?.invalid && form.get('email')?.touched">Enter valid Email
+                        </p>
+                    </div>
+                    <div class="form__field">
+                        <input [type]="show? 'text' : 'password'" placeholder="password" formControlName="password"
+                            [class.error]="form.get('password')?.invalid && form.get('password')?.touched">
+                        <p [class.error]="form.get('password')?.invalid && form.get('password')?.touched">Enter valid
+                            password</p>
+                        <button class="showPass" ngClass="{'hide': {{!show}}, 'show': {{show}}}" (click)="password()">
+                            <fa-icon [icon]="show? faEyeSlash:faEye"></fa-icon>
+                        </button>
+                    </div>
+                    <div class="form__field confirm">
+                        <input [type]="showConf? 'text' : 'password'" placeholder="confirm password"
+                            formControlName="confirmPassword"
+                            [class.error]="form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched">
+                        <p
+                            [class.error]="form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched &&form.get('password')!=form.get('confirmPassword')">
+                            Passwords do not match</p>
+                        <button class="showPass" ngClass="{'hide': {{!showConf}}, 'show': {{showConf}}}"
+                            (click)="confirmpassword()">
+                            <fa-icon [icon]="showConf? faEyeSlash:faEye"></fa-icon>
+                        </button>
+                    </div>
+                    <div class="form__field gender">
+                        <input type="radio" formControlName="gender" value="Male" name="gender" id="option-1">
+                        <input type="radio" formControlName="gender" value="Female" name="gender" id="option-2">
+                        <label for="option-1" class="option option-1">
+                            <div class="dot"></div>
+                            <span>Male</span>
+                        </label>
+                        <label for="option-2" class="option option-2">
+                            <div class="dot"></div>
+                            <span>Female</span>
+                        </label>
+                    </div>
+                    <div class="form__field">
+                        <input type="submit" value="Signup" (click)="Signup()" [disabled]="!form.valid"
+                            [class.disabled]="!form.valid">
+                    </div>
+                    <div class="errorHandle">
+                        <p [class.error]="errorHandleSign">{{msg}}</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,119 @@
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" style="background-image: url(../../../assets/img/ECO3.jpg);">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Eco</span> Store</h2>
+                            <p class="animate__animated animate__fadeInUp">There is no Planet B.
+                                Be A Part Of The Solution</p>
+                            <div>
+                                <a routerLink="/shop"
+                                    class="btn-menu animate__animated animate__fadeInUp scrollto">Visit Shop</a>
+                                <a routerLink="/about"
+                                    class="btn-book animate__animated animate__fadeInUp scrollto">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+<!-- features list section -->
+<div class="list-section pt-5 pb-5" style=" background-color: #f5f5f5;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <div class="list-box d-flex align-items-center justify-content-center">
+                    <div class="list-icon">
+                        <!-- <i class="fa-regular fa-truck-bolt"></i> -->
+                        <fa-icon [icon]="faShippingFast"></fa-icon>
+                    </div>
+                    <div class="content">
+                        <h3>Free Shipping</h3>
+                        <p>When order over $75</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <div class="list-box d-flex align-items-center justify-content-center">
+                    <div class="list-icon">
+                        <fa-icon [icon]="faPhoneVolume"></fa-icon>
+                        <!-- <i class="fa fa-sharp fa-solid fa-phone"></i> -->
+
+                    </div>
+                    <div class="content">
+                        <h3>24/7 Support</h3>
+                        <p>Get support all day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="list-box d-flex justify-content-center align-items-center">
+                    <div class="list-icon">
+                        <fa-icon [icon]="faMoneyBill1"></fa-icon>
+                    </div>
+                    <div class="content">
+                        <h3>Cash On Delivery</h3>
+                        <p>No credit card needed!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end features list section -->
+
+<!-- product section -->
+<div class="product-section mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3><span class="green-text">Our</span> Products</h3>
+                    <p>Take a look at products on sale!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center mb-4" *ngFor="let s of products ">
+                <div class="single-product-item ">
+                    <div class="sale"><span class='badge' title='22% Sale!'>{{s.sale}}% Sale!</span></div>
+                    <div class="product-image">
+                        <a><img [src]="s?.imgURL|| '../../assets/img/default.png' " alt=""></a>
+                    </div>
+                    <h3>{{s.name}}
+                        <span *ngIf="s.quantity==0" style="color: #CF3537; font-size: 20px; ">Out of Stock</span>
+                    </h3>
+                    <span>Category: {{s.category}}</span>
+                    <p class="old-price">
+                        <span>${{s.price}}</span>
+                    </p>
+                    <p class="product-price mt-3">
+                        ${{(s.price*(1-s.sale/100)).toFixed(2)}}
+                    </p>
+                    <a class="cart-btn" (click)="Open(s)">
+                        <fa-icon [icon]="faShoppingCart"></fa-icon>More details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end product section -->
+<!-- shop banner -->
+<section class="shop-banner">
+    <div class="container">
+        <h3>Sale is on! <br> with big <span class="green-text">Discount...</span></h3>
+        <div class="sale-percent"><span>Sale! <br> Upto</span>70% <span>off</span></div>
+        <a routerLink="/shop" class="cart-btn btn-lg">Shop Now</a>
+    </div>
+</section>
+<!-- end shop banner -->

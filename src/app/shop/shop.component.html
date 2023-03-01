@@ -1,0 +1,82 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>Be Part Of The Solution.</p>
+          <h1>Shop</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+    </div>
+    <div class="col-md-6">
+      <div class="product-filters">
+        <ul>
+          <li (click)="filter(item=='All'?'':item)" *ngFor="let item of items; let i = index"
+            [class.active]="i === activeIndex" (click)="activeIndex = i">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <mat-label>Sort by</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="">None</mat-option>
+          <mat-option value="desc">Price: High to Low</mat-option>
+          <mat-option value="asc">Price: Low to High</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-lg-4 col-md-6 text-center mb-4"
+      *ngFor="let s of products | filter:x | filter:nav.search |filterPrice: minValue:maxValue | orderBy:selected:'priceAfterSale' | paginate: { itemsPerPage: count, currentPage: p } ">
+      <div class="single-product-item">
+        <div *ngIf="s.sale != 0" class="sale">
+          <p class='badge' title='22% Sale!'>{{s.sale}}% Sale!</p>
+        </div>
+        <div class="product-image">
+          <a><img [src]=" s?.imgURL|| '../../assets/img/default.png'" alt=""></a>
+        </div>
+        <h3>{{s.name}}
+          <span *ngIf="s.quantity==0" style="color: #CF3537; font-size: 20px; ">Out of Stock</span>
+        </h3>
+        <span class="span">Category: {{s.category}}</span>
+        <ng-template [ngIf]="s.sale == 0" [ngIfElse]="onsale">
+          <div class="d-flex justify-content-center align-items-center">
+            <p class="product-price">
+              ${{s.price}}
+            </p>
+          </div>
+        </ng-template>
+        <ng-template #onsale>
+          <div class="d-flex justify-content-center align-items-center">
+            <p class="product-price">
+              ${{(s.price*(1-s.sale/100)).toFixed(2)}}
+            </p>
+            <p class="old-price">
+              <span class="span">${{s.price}}</span>
+            </p>
+          </div>
+        </ng-template>
+        <a class="cart-btn" (click)="Open(s)">
+          <fa-icon [icon]="faShoppingCart"></fa-icon>More details
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3 mb-3">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

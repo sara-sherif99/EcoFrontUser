@@ -1,0 +1,284 @@
+.navbar {
+    background-color: white;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0;
+    transition: all 0.5s linear;
+}
+
+.navbar button {
+    border: none;
+    width: 50%;
+    text-decoration: none;
+    color: var(--green);
+    font-size: 20px;
+    padding: 15px;
+    transition: all 0.5s linear;
+}
+
+.navbar button.active {
+    transition: all 0.5s linear;
+    background-color: var(--green);
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.align {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.align__item--start {
+    align-self: flex-start;
+}
+
+.align__item--end {
+    align-self: flex-end;
+}
+
+.site__logo {
+    margin-bottom: 2rem;
+}
+
+input {
+    border: 0;
+    font: inherit;
+}
+
+input::placeholder {
+    color: #7e8ba3;
+}
+
+.form input {
+    outline: 0;
+    padding: 0.5rem 1rem;
+}
+
+.form input[type=email],
+.form input[type=password],
+.form input[type=text] {
+    width: 100%;
+}
+
+.grid {
+    margin: 0 auto;
+    max-width: 25rem;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+}
+
+svg {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+a {
+    color: #7e8ba3;
+}
+
+.register {
+    box-shadow: 0 0 250px #000;
+    text-align: center;
+    padding: 3.5rem 2rem;
+}
+
+.register input {
+    border-radius: 12px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.register input[type=email],
+.register input[type=password],
+.register input[type=text] {
+    border: 1px solid gray;
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position: 1rem 50%;
+    text-align: left;
+    transition: all 0.5s linear;
+}
+
+.register input[type=email].error,
+.register input[type=password].error,
+.register input[type=text].error {
+    border: 1px solid red;
+    transition: all 0.5s linear;
+}
+
+.register input[type=email]:focus,
+.register input[type=password]:focus,
+.register input[type=text]:focus {
+    border: 1px solid var(--green);
+    transition: all 0.5s linear;
+}
+
+.register input[type=submit] {
+    background-color: var(--green);
+    color: #fff;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.register input[type=submit].disabled {
+    background-color: var(--green);
+    opacity: 0.8;
+}
+
+.form-block {
+    background-color: white;
+}
+
+h2 {
+    color: black !important;
+}
+
+.showPass {
+    background: none;
+    border: none;
+    transform: translate(120px, -60px);
+}
+
+.confirm {
+    transform: translateY(-20px);
+}
+
+.gender {
+    display: inline-flex;
+    background: #fff;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 20px 15px;
+    margin-top: -50px;
+}
+
+.gender .option {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.gender .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.gender .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--green);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#option-1:checked:checked~.option-1,
+#option-2:checked:checked~.option-2 {
+    border-color: var(--green);
+    background: var(--green);
+}
+
+#option-1:checked:checked~.option-1 .dot,
+#option-2:checked:checked~.option-2 .dot {
+    background: #fff;
+}
+
+#option-1:checked:checked~.option-1 .dot::before,
+#option-2:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gender .option span {
+    font-size: 15px;
+    color: #808080;
+}
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span {
+    color: #fff;
+}
+
+.form__field p {
+    margin: 0;
+    padding: 5px 10px;
+    color: red;
+    text-align: left;
+    visibility: hidden;
+}
+
+.errorHandle p {
+    margin: 0;
+    padding: 5px 10px;
+    color: black;
+    text-align: left;
+    visibility: hidden;
+    background-color: #FAD3D3;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+.form__field p.error,
+.errorHandle p.error {
+    visibility: visible;
+}
+
+.logo {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo {
+    color: var(--light);
+    font-size: 50px;
+}
+
+.logo span * {
+    color: var(--light);
+}
+
+@media only screen and (max-width: 992px) {
+    .showPass {
+        transform: translate(90px, -60px);
+    }
+}

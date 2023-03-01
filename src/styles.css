@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --green: #293F10;
+  --light: #7cad45;
+  --back: #9fc177;
+  --sec:#EFEEEA;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.auth-dialog .mat-dialog-container {
+    padding: 0;
+    margin: auto;
+}
+.auth-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: var(--mdc-dialog-container-shape, var(--mdc-shape-medium, 20px));
+}
+.product-dialog .mat-dialog-container {
+  padding: 20px;
+  margin: auto;
+  width: 70%;
+}
+.product-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+border-radius: var(--mdc-dialog-container-shape, var(--mdc-shape-medium, 20px));
+}
+.ngx-slider .ngx-slider-pointer {
+  background-color: var(--light) !important;
+}
+.ngx-slider .ngx-slider-selection {
+  background: var(--green) !important;
+}
+.ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+  background: var(--green) !important;
+}
+/*-------------------*/
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white;
+  border: 2px solid var(--light);
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--light);
+}
+.mat-mdc-select-value {
+  color: var(--green);
+}
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--light);
+}
+.mat-mdc-select-arrow svg {
+  fill: var(--light) !important; 
+}
+.mdc-menu-surface {
+  background-color: var(--back);
+  color: var(--mdc-theme-on-surface, #fff);
+}
+.mat-primary .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: var(--green);
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white;
+}
+.ngx-pagination * {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.ngx-pagination .current {
+  background: var(--light) !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+}

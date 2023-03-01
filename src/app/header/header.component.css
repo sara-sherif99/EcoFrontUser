@@ -1,0 +1,346 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 1000;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+
+}
+
+#header.scroll {
+  background-color: white;
+}
+
+#header.header-scrolled,
+#header.header-inner-pages {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#header .logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: var(--green);
+  font-size: 30px;
+}
+
+#header .logo a span {
+  color: var(--green);
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+/*--------------------------------------------------------------
+#  Get Startet Button
+--------------------------------------------------------------*/
+.get-started-btn {
+  color: white;
+  border-radius: 4px;
+  padding: 7px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid white;
+}
+
+#header.scroll .get-started-btn {
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.get-started-btn:hover {
+  background: var(--light);
+  color: white;
+  font-size: larger;
+  border: 2px solid var(--light);
+}
+
+#header.scroll .get-started-btn:hover {
+  background: var(--green);
+  color: white;
+}
+
+.btn.submit {
+  color: white;
+  border-color: white;
+}
+
+.btn.submit:hover {
+  color: white;
+  background-color: var(--light);
+  border-color: var(--light);
+}
+
+#header.scroll .btn.submit {
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+#header.scroll .btn.submit:hover {
+  color: white;
+  background-color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.get-started-btn.profile {
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 20px;
+}
+
+.get-started-btn.profile:hover {
+  color: white;
+  border: 2px solid var(--light);
+  background-color: var(--light);
+}
+
+.navbar-toggler {
+  color: var(--green);
+  margin-top: 10px;
+}
+
+
+
+@media (max-width: 992px) {
+  .get-started-btn {
+    padding: 7px 20px 8px 20px;
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 17px;
+  color: white;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+
+.navbar ul a i,
+.navbar ul a:focus i {
+  font-size: 15px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+#header.scroll .navbar ul a {
+  color: gray;
+
+}
+
+#header.scroll .navbar ul .active,
+.navbar ul .active {
+  color: var(--green);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.navbar ul a:hover,
+#header.scroll .navbar ul a:hover,
+.navbar li:hover>a {
+  color: var(--light);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #151515;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #151515;
+  background-color: var(--green);
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 20px rgba(32, 67, 36, 0.6);
+  top: 0;
+
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 1px 1px var(--light);
+}
+
+.navbar a.dropdown-item {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  color: var(--green);
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  padding: 10px 0 10px 30px;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.navbar a.dropdown-item:hover,
+.navbar a.dropdown-item:focus {
+  color: var(--light);
+  background-color: var(--bs-dropdown-link-hover-bg);
+}
+
+.numberOfitems span {
+  font-size: 16px;
+  line-height: 14px;
+  position: absolute;
+  z-index: 900;
+  top: -12px;
+  right: -10px;
+  color: #fff;
+  padding: 5px;
+  width: 22px;
+  height: 22px;
+  background: #CF3537;
+  border-radius: 50%;
+  text-align: center;
+
+}
+
+.numberOfitems {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all ease 0.2s;
+  line-height: 24px;
+  position: relative;
+}
+
+#header.scroll .cart-icon {
+  color: var(--green);
+}
+
+.cart-icon {
+  font-size: 25px;
+}
+
+.dropdown-menu.mobile {
+  margin-left: -75px;
+
+}

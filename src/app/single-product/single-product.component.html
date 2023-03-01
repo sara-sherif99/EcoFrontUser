@@ -1,0 +1,54 @@
+<div class="single-product mt-150 mb-150">
+    <div class="container">
+        <div class="row" style="min-height: 350px">
+            <div class="col-md-5 m-auto">
+                <div class="single-product-img">
+                    <img [src]=" data?.imgURL || '../../assets/img/default.png'" alt="">
+                </div>
+            </div>
+            <div class="col-md-7 mt-4">
+                <div class="single-product-content">
+                    <h3>{{data.name}}</h3>
+                    <ng-template [ngIf]="data.sale == 0" [ngIfElse]="onsale">
+                        <div class="d-flex">
+                            <p class="single-product-pricing">
+                                <span>Price</span>
+                                ${{data.price}}
+                            </p>
+                        </div>
+                    </ng-template>
+                    <ng-template #onsale>
+                        <div class="d-flex align-items-center">
+                            <p class="single-product-pricing">
+                                <span>Price</span>
+                                ${{(data.price*(1-data.sale/100)).toFixed(2)}}
+                            </p>
+                            <p class="old-price">
+                                <span>${{data.price}}</span>
+                            </p>
+                        </div>
+                    </ng-template>
+                    <p style="font-size: 25px;">{{data.description}}</p>
+                    <div class="single-product-form">
+                        <form action="index.html">
+                            <input type="number" placeholder="1" min="0" max="{{data.quantity}}" name="amount"
+                                [(ngModel)]="amount">
+                        </form>
+                        <div class="d-flex align-items-center mb-3">
+                            <a *ngIf="!inCart && data.quantity>0" class="cart-btn" (click)="AddToCart()"><i
+                                    class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            <span *ngIf="data.quantity==0" style="color: #CF3537; font-size: 20px; "> Out of
+                                Stock</span>
+                            <a *ngIf="inCart && data.quantity>0" class="cart-btn disable" (click)="RemovefromCart()"><i
+                                    class="fas fa-shopping-cart"></i>Remove from Cart</a>
+                            <button class="heart" (click)="WishList()">
+                                <fa-icon [icon]="added?faHeartFill:faHeart"></fa-icon>
+                            </button>
+                        </div>
+                        <p class="ps-2"><strong>Categories: </strong>{{data.category}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

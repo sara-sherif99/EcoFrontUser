@@ -1,0 +1,126 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>The Earth is what we all have in common</p>
+          <h1>Cart</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- cart -->
+<!--empty cart-->
+<ng-container *ngIf=" !products || products.length == 0">
+  <div class="container empty-cart-caption">
+    <div class="row align-items-center elimg">
+      <img class="img-fluid" src="../../assets/img/empty.png" alt="" />
+    </div>
+
+    <div class="btn-container d-flex justify-content-end ">
+      <button class="mt-5 mb-4 btn btn-success" routerLink="/shop">Go Shopping</button>
+
+    </div>
+  </div>
+</ng-container>
+<!---->
+<ng-container *ngIf=" products && products.length > 0">
+  <div class="cart-section mt-150 mb-150">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-lg-8 col-md-12">
+          <div class="cart-table-wrap">
+            <div class="table-responsive">
+              <table class="table cart-table">
+                <thead>
+                  <tr class="table-head-row">
+                    <th>No.</th>
+                    <th class="product-remove">Remove</th>
+                    <th class="product-image">Product Image</th>
+                    <th class="product-name">Name</th>
+                    <th class="product-price">Price</th>
+                    <th class="product-quantity">Quantity</th>
+                    <th class="product-total">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-body-row" *ngFor="let productItem of products ;let i =index">
+                    <td (click)="Open(productItem)" style="cursor: pointer;">{{ i + 1 }}</td>
+                    <td class="product-remove"><button class="btn btn-danger"
+                        (click)="removeItem(productItem?._id)">Delete</button></td>
+                    <td class="product-image"><img [src]=" productItem?.imgURL || '../../assets/img/default.png'"
+                        alt="{{productItem.name}}" alt=""></td>
+                    <td class="product-name">{{productItem?.name}}</td>
+                    <td class="product-price">{{(productItem.price*(1-productItem.sale/100)).toFixed(2)}}</td>
+                    <td class="row m-auto p-2 align-items-center quantity">
+                      <button class="col-4 btn btn-success" (click)="increase(productItem?._id)">+</button>
+                      <div class="col-4 p-2">{{productItem?.amount}}</div>
+                      <button class="col-4 btn  btn-success" (click)="decrease(productItem._id)">-</button>
+                    </td>
+                    <td class="product-total-price">{{ productItem?.amount * productItem?.price | number }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="total-section d-flex align-items-center flex-column">
+            <table class="total-table table">
+              <thead class="total-table-head">
+                <tr class="table-total-row">
+                  <th>Total</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="total-data">
+                  <td><strong>Subtotal: </strong></td>
+                  <td>{{geTotal}}</td>
+                </tr>
+                <tr class="total-data">
+                  <td><strong>Shipping: </strong></td>
+                  <td>$45</td>
+                </tr>
+                <tr class="total-data">
+                  <td><strong>Total: </strong></td>
+                  <td>{{allTotal}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="cart-buttons">
+              <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Check Out
+              </button>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Order</h1>
+                    <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to checkout and confirm order?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" (click)="Checkout()">Ok</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<!-- end cart -->

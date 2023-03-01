@@ -1,0 +1,394 @@
+ /* -----------------------------------------------------------------------------
+  
+  # Footer Styles
+  
+  ----------------------------------------------------------------------------- */
+ a {
+     text-decoration: none;
+ }
+
+ .single-logo-item img {
+     max-width: 180px;
+     margin: 0 auto;
+ }
+
+ .logo-carousel-section {
+     background-color: #f5f5f5;
+     padding: 50px 0;
+ }
+
+ .footer-area {
+     background-color: var(--back);
+     color: #fff;
+     padding: 150px 0;
+ }
+
+ h2.widget-title {
+     font-size: 24px;
+     font-weight: 500;
+     position: relative;
+     padding-bottom: 20px;
+     color: #fff;
+ }
+
+ h2.widget-title:after {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width: 20px;
+     height: 2px;
+     background-color: var(--green);
+     content: "";
+ }
+
+ .footer-box p {
+     color: #fff;
+     opacity: 0.7;
+     line-height: 1.8;
+ }
+
+ .footer-box ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+
+ .footer-box ul li {
+     opacity: 0.7;
+     margin-bottom: 10px;
+     line-height: 1.8;
+ }
+
+ .footer-box ul li:last-child {
+     margin-bottom: 0;
+ }
+
+ .footer-box.subscribe form input[type=email] {
+     border: none;
+     background-color: white;
+     width: 78%;
+     padding: 15px;
+     border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+     color: var(--green);
+ }
+
+ .footer-box.subscribe form button {
+     width: 20%;
+     border: none;
+     background-color: var(--green);
+     color: white;
+     padding: 14px 0;
+     border-top-right-radius: 3px;
+     border-bottom-right-radius: 3px;
+     cursor: pointer;
+ }
+
+ .footer-box.subscribe form button:focus {
+     outline: none;
+ }
+
+ .footer-box ul li a {
+     color: #fff;
+ }
+
+ .footer-box.pages ul li {
+     position: relative;
+     padding-left: 20px;
+ }
+
+ .footer-box.pages ul li:before {
+     position: absolute;
+     left: 0;
+     top: 0;
+     content: "\f105";
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+     color: var(--green);
+ }
+
+ a.navbar-brand {
+     transition: 0.3s;
+ }
+
+ a.navbar-brand:hover {
+     opacity: 0.7;
+ }
+
+ a.boxed-btn {
+     transition: 0.3s;
+ }
+
+ a.boxed-btn:hover {
+     background-color: var(--light);
+     color: var(--green);
+ }
+
+ a.bordered-btn {
+     transition: 0.3s;
+ }
+
+ a.bordered-btn:hover {
+     background-color: var(--green);
+     color: #fff;
+ }
+
+ ul.sub-menu a {
+     transition: 0.3s;
+ }
+
+ ul.sub-menu li:hover a {
+     color: var(--green);
+ }
+
+ .single-tof-box {
+     transition: 0.3s;
+ }
+
+ .single-tof-box:hover {
+     box-shadow: 0 0 80px #353535;
+ }
+
+ a.video-play-btn {
+     transition: 0.3s;
+ }
+
+ a.video-play-btn:hover {
+     background-color: #333;
+     color: var(--green);
+ }
+
+ .latest-news-bg {
+     transition: 0.3s;
+ }
+
+ .single-latest-news:hover .latest-news-bg {
+     opacity: 0.8;
+ }
+
+ a.tof-btn {
+     transition: 0.3s;
+ }
+
+ a.tof-btn i {
+     transition: 0.3s;
+ }
+
+ a.tof-btn:hover {
+     color: var(--green);
+ }
+
+ a.tof-btn:hover i {
+     margin-left: 10px;
+ }
+
+ .single-latest-news {
+     box-shadow: 0 0 20px #ddd;
+     transition: 0.3s;
+ }
+
+ .single-latest-news:hover {
+     box-shadow: 0 0 0;
+     box-shadow: none;
+ }
+
+ .single-logo-item {
+     transition: 0.3s;
+ }
+
+ .single-logo-item:hover {
+     opacity: 0.7;
+ }
+
+ .footer-box.pages ul li a {
+     transition: 0.3s;
+ }
+
+ .footer-box.pages ul li:hover a {
+     color: var(--green);
+ }
+
+ .footer-box.subscribe form button {
+     transition: 0.3s;
+ }
+
+ .footer-box.subscribe form button:hover {
+     background-color: var(--green);
+     color: var(--light);
+ }
+
+ .social-icons ul li:hover a {
+     color: var(--green);
+ }
+
+ .social-icons ul li a {
+     transition: 0.3s;
+ }
+
+ ul.social-link-team li a {
+     transition: 0.3s;
+ }
+
+ ul.social-link-team li a:hover {
+     background-color: #051922;
+     color: var(--green);
+ }
+
+ .counter-box {
+     transition: 0.3s;
+ }
+
+ .counter-box:hover {
+     box-shadow: 0 0 80px #6f6f6f;
+ }
+
+ input[type="submit"] {
+     transition: 0.3s;
+     border-radius: 50px !important;
+ }
+
+ input[type="submit"]:hover {
+     background-color: #051922;
+     color: var(--green);
+ }
+
+ div.owl-controls,
+ .owl-controls div {
+     transition: 0.3s;
+ }
+
+ div.owl-controls div.owl-nav div:hover {
+     opacity: 0.7;
+ }
+
+ .pagination-wrap ul li a {
+     transition: 0.3s;
+ }
+
+ .pagination-wrap ul li:hover a {
+     background-color: var(--green);
+ }
+
+ .icons a i {
+     transition: 0.3s;
+ }
+
+ .icons a:hover i {
+     color: var(--green);
+ }
+
+ .tof-text a.tof-btn {
+     margin-top: 15px;
+     display: inline-block;
+ }
+
+ .single-pricing-table {
+     transition: 0.3s;
+ }
+
+ .single-pricing-table:hover {
+     box-shadow: 0 0 20px #ddd;
+ }
+
+ .product-image img {
+     transition: 0.3s;
+ }
+
+ .product-image img:hover {
+     box-shadow: none;
+ }
+
+ a.cart-btn {
+     transition: 0.3s;
+ }
+
+ a.cart-btn:hover {
+     background-color: #051922;
+     color: var(--green);
+ }
+
+ .recent-posts ul li {
+     transition: 0.3s;
+ }
+
+ .recent-posts ul li:hover {
+     opacity: 0.7;
+ }
+
+ ul.sub-menu li a {
+     transition: 0.3s;
+ }
+
+ ul.sub-menu li:hover a {
+     color: var(--green) !important;
+ }
+
+ .sidebar-section ul li a {
+     transition: 0.3s;
+ }
+
+ .sidebar-section ul li a:hover {
+     opacity: 0.7;
+ }
+
+ .comment-text-body h4 a {
+     transition: 0.3s;
+ }
+
+ .comment-text-body h4 a:hover {
+     color: var(--green);
+ }
+
+ ul.product-share li a {
+     transition: 0.3s;
+ }
+
+ ul.product-share li:hover a {
+     color: var(--green);
+ }
+
+ .service-menu ul li a {
+     transition: 0.3s;
+ }
+
+ .service-menu ul li a.active {
+     font-weight: 600;
+     color: #ffe200;
+ }
+
+ .service-menu ul li a:hover {
+     color: #ffe200;
+ }
+
+ .single-product-item {
+     transition: 0.3s;
+ }
+
+ .single-product-item:hover {
+     box-shadow: none;
+ }
+
+ .search-bar-tablecell button[type=submit] {
+     transition: 0.3s;
+ }
+
+ .search-bar-tablecell button[type=submit]:hover {
+     background-color: #fff;
+     color: #000;
+ }
+
+ span.close-btn {
+     transition: 0.3s;
+ }
+
+ span.close-btn:hover {
+     color: #fff;
+ }
+
+ a.mobile-show.search-bar-icon {
+     transition: 0.3s;
+ }
+
+ a.mobile-show.search-bar-icon:hover {
+     color: var(--green);
+ }

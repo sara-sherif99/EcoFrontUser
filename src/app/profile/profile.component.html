@@ -1,0 +1,157 @@
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <h1>My Profile</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="main-body">
+    <div class="row gutters-sm body">
+      <div class="card col-md-4 mb-3">
+        <div class="card-body mt-5">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="{{user.imgURL || '../../assets/img/defaultUser.jpg'}}" alt="pp" class="rounded-circle" width="150"
+              (click)="openFile()" style="cursor: pointer;">
+            <input type="file" (change)="fileChoosen($event)" id='input_file' hidden>
+            <div class="mt-3">
+              <h4>Edit profile picture</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <ng-template [ngIf]="!edit" [ngIfElse]="editView">
+            <div class="card-body">
+              <div class="row p-2">
+                <div class="col-sm-3">
+                  <h6 class="mb-0 fs-5">User Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.userName}}
+                </div>
+              </div>
+              <hr>
+              <div class="row p-2">
+                <div class="col-sm-3">
+                  <h6 class="mb-0 fs-5">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.email}}
+                </div>
+              </div>
+              <hr>
+              <div class="row p-2">
+                <div class="col-sm-3">
+                  <h6 class="mb-0 fs-5">Phone</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.phone}}
+                </div>
+              </div>
+              <hr>
+              <div class="row p-2">
+                <div class="col-sm-3">
+                  <h6 class="mb-0 fs-5">Address</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.address}}
+                </div>
+              </div>
+              <hr>
+              <div class="row p-2">
+                <div class="col-sm-3">
+                  <h6 class="mb-0 fs-5">Gender</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.gender}}
+                </div>
+              </div>
+              <hr>
+              <div class="row p-2">
+                <div class="col-sm-12 m-auto">
+                  <a class="btn fs-5" (click)="openEditView()">Edit</a>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #editView>
+            <div class="form-block">
+              <form action="" method="post" class="form" [formGroup]="form">
+                <div class="row p-2 form__field">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0 fs-5">User Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form__field">
+                      <input type="text" placeholder="{{user.userName}}" formControlName="username">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row p-2 form__field">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0 fs-5">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form__field">
+                      <input type="text" placeholder="{{user.email}}" formControlName="email">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row p-2 form__field">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0 fs-5">Password</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form__field">
+                      <input type="text" placeholder="***********" formControlName="password">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row p-2 form__field">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0 fs-5">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form__field">
+                      <input type="text" placeholder="{{user.phone}}" formControlName="phone">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row p-2 form__field">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0 fs-5">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form__field">
+                      <input type="text" placeholder="{{user.address}}" formControlName="address">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row p-2">
+                  <div class="col-sm-6 m-auto">
+                    <a class="btn fs-5" (click)="Edit()">Edit</a>
+                  </div>
+                  <div class="col-sm-6 m-auto">
+                    <a class="btn fs-5" (click)="openEditView()">Cancel</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

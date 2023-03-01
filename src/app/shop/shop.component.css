@@ -1,0 +1,228 @@
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*first*/
+  .green-text {
+    color: var(--light);
+  }
+
+  .breadcrumb-section {
+    padding: 150px 0;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    background-attachment: fixed;
+    padding-top: 200px
+  }
+
+  .breadcrumb-section:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: var(--back);
+    z-index: -1;
+  }
+
+  .breadcrumb-text h1 {
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .breadcrumb-text p {
+    color: var(--green);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+  }
+
+  .product-filters {
+    margin-bottom: 60px;
+  }
+
+  .product-filters ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  .product-filters ul li {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 15px;
+    border: 2px solid #051922;
+    color: #323232;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 25px;
+  }
+
+  .product-filters ul li.active {
+    border: 2px solid var(--green);
+    background-color: var(--green);
+    color: #fff;
+  }
+
+  /***********************/
+
+  .single-product-item {
+    box-shadow: 0 0 20px #e4e4e4;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .product-image {
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  .product-image img {
+    width: 90%;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    transition: 0.3s;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .single-product-item h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: black;
+  }
+
+  p.product-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    margin: 20px 0;
+  }
+
+  .single-product-item span.span {
+    display: block;
+    opacity: 0.8;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  a.cart-btn {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    background-color: var(--light);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  a.cart-btn:hover {
+    background-color: var(--green);
+    transition: 0.3s;
+    font-size: larger;
+  }
+
+  a.cart-btn * {
+    margin-right: 5px;
+  }
+
+  .single-product-img img {
+    border-radius: 5px;
+    box-shadow: 0 0 20px #ddd;
+  }
+
+  .single-product-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  p.single-product-pricing span.span {
+    font-size: 18px;
+    display: block;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .single-product-content p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .single-product-content p.single-product-pricing {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #051922;
+    line-height: inherit;
+  }
+
+  input[type="number"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .single-product-form a.cart-btn {
+    margin-bottom: 15px;
+  }
+
+  .single-product-content h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 35px;
+  }
+
+  .sale {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #CF3537;
+    transition: all ease 0.2s;
+    line-height: 24px;
+    position: relative;
+  }
+
+  .sale p.badge {
+    font-size: 18px;
+    line-height: 16px;
+    position: absolute;
+    z-index: 900;
+    top: 8px;
+    right: 10px;
+    color: #fff;
+    padding: 10px 12px;
+    background: #CF3537;
+    border-radius: 100px;
+  }
+
+  .old-price {
+    color: #666;
+    margin: 0 0 0 5px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .old-price span.span {
+    text-decoration: line-through;
+  }

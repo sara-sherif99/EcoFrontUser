@@ -1,0 +1,123 @@
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.1px;
+    line-height: 1.8;
+    color: black;
+    margin: 0 0 1.25rem 0;
+}
+
+.single-product {
+    background-color: white;
+}
+
+.single-product-img img {
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 20px #ddd;
+    box-shadow: 0 0 20px #ddd;
+    max-width: 80%;
+}
+
+.single-product-content h3 {
+    font-size: 35px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.single-product-content p.single-product-pricing {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #051922;
+    line-height: inherit;
+}
+
+p.single-product-pricing span {
+    font-size: 18px;
+    display: block;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.single-product-content p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+input[type="number"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border: 1px solid var(--light);
+}
+
+a.cart-btn {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    background-color: var(--light);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+a.cart-btn:hover {
+    background-color: var(--green);
+    color: white;
+    transition: 0.3s;
+    font-size: larger;
+}
+
+.heart {
+    background-color: white;
+    border: none;
+    font-size: 30px;
+    color: #CF3537;
+}
+
+.cart-btn.disable {
+    background-color: #CF3537;
+}
+
+.cart-btn.disable:hover {
+    background-color: #ca5e5f;
+}
+
+.cart-btn * {
+    margin-right: 5px;
+}
+
+p.product-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    margin: 20px 0;
+}
+
+.single-product-content .old-price {
+    color: #666;
+    margin: 0 0 0 5px;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 24px 0 0 20px;
+}
+
+.single-product-content .old-price span {
+    text-decoration: line-through;
+}

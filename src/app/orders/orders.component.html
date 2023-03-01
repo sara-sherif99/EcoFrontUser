@@ -1,0 +1,78 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>The Earth is what we all have in common</p>
+          <h1>Orders</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- cart -->
+<!--empty cart-->
+<ng-container *ngIf=" !orders|| orders.length == 0">
+  <div class="container empty-cart-caption p-5">
+    <div class="row align-items-center elimg">
+      <img class="img-fluid" src="../../assets/img/empty.png" alt="" />
+    </div>
+
+    <div class="btn-container d-flex justify-content-end ">
+      <button class="mt-5 mb-4 btn btn-success" routerLink="/shop">Go Shopping</button>
+
+    </div>
+  </div>
+</ng-container>
+<!---->
+<ng-container *ngIf=" orders && orders.length > 0">
+  <div class="cart-section mt-150 mb-150">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cart-table-wrap">
+            <div class="table-responsive">
+              <table class="table cart-table">
+                <thead>
+                  <tr class="table-head-row">
+                    <th>No.</th>
+                    <th class="product-image">Products</th>
+                    <th class="product-image">Order Date</th>
+                    <th class="product-name">Toal Price</th>
+                    <th class="product-price">Status</th>
+                    <th class="product-total">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-body-row" *ngFor="let item of orders ;let i =index">
+                    <td style="cursor: pointer;">{{ i + 1 }}</td>
+                    <td>
+                      <div *ngFor="let product of item.productIds" style="margin: 10px;">
+                        <a (click)="Open(product.product)" class="link">
+                          {{product.product?.name}}
+                        </a>
+                      </div>
+                    </td>
+                    <td class="product-price">{{item?.orderDate}}</td>
+                    <td class="product-price">{{item?.totalPrice}}</td>
+                    <td class="product-price" [ngStyle]="{'color':(item?.orderStatus=='Accepted')?'green':
+                    ((item?.orderStatus=='Rejected')?'red':'orange')}">
+                      {{item?.orderStatus}}
+                    </td>
+                    <td class="product-total px-2">
+                      <button class="btn btn-danger m-2" (click)="Remove(item._id)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
