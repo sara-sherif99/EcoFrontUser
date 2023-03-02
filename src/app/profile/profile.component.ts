@@ -75,7 +75,7 @@ export class ProfileComponent {
           (response) => {
             this.user = response.user;
             localStorage.setItem('user', JSON.stringify(this.user));
-            this.edit = !this.edit;
+//             this.edit = !this.edit;
           },
           (error) => {
             console.log(error);
